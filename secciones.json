@@ -2,6 +2,7 @@
     { "titulo": "Unidad 1: Modelos de Datos", "archivo": "unidad1.json" },
   { "titulo": "Unidad 2: Modelo Relacional y Álgebra Relacional", "archivo": "unidad2.json" },
   { "titulo": "Unidad 3: Introducción a la Gestión de Bases de Datos", "archivo": "unidad3.json" },
-  { "titulo": "Unidad 4: Diseño de Bases de Datos Relacionales - Implementación", "archivo": "unidad4.json" }
-
+  { "titulo": "Unidad 4: Diseño de Bases de Datos Relacionales - Implementación", "archivo": "unidad4.json" },
+{ "titulo": "Unidad 5: Operaciones de Manipulación de datos en Bases de Datos Relacionales", "archivo": "unidad5.json" },
+{ "titulo": "Unidad 6: Seguridad en Bases de Datos Relacionales", "archivo": "unidad6.json" }
 ]
