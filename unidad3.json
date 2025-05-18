@@ -1,0 +1,90 @@
+[
+  {
+    "pregunta": "¿Por qué es importante la gestión de datos en una organización?",
+    "respuesta": "Porque el éxito de una organización depende de su capacidad de obtener, almacenar y analizar sus datos de manera precisa, eficiente y oportuna. Si bien se dispone de una gran cantidad de datos, sin herramientas adecuadas pueden convertirse en un obstáculo. Por eso es clave tener sistemas que administren y procesen los datos eficazmente."
+  },
+  {
+    "pregunta": "¿Qué es una base de datos?",
+    "respuesta": "Es una colección organizada de datos que modeliza una organización o proceso. Su propósito es organizar lógicamente la información y representarla mediante un sistema formal y abstracto."
+  },
+  {
+    "pregunta": "¿En qué se diferencia de los archivos tradicionales?",
+    "respuesta": "A diferencia de los archivos, la base de datos:<br/>- Integra procesos de la organización.<br/>- Minimiza redundancias.<br/>- Se accede de forma lógica y no física.<br/>- Es independiente de las aplicaciones que la usan."
+  },
+  {
+    "pregunta": "¿Qué mejoras ofrece una base de datos frente a los archivos?",
+    "respuesta": "1. Independencia de datos.<br/>2. Eficiencia en el acceso.<br/>3. Administración centralizada.<br/>4. Reducción del tiempo de desarrollo.<br/>5. Seguridad de datos.<br/>6. Recuperación ante fallas.<br/>7. Acceso concurrente controlado."
+  },
+  {
+    "pregunta": "¿Qué es un SGBD?",
+    "respuesta": "Es un software que permite definir, manipular y administrar bases de datos. Es el único medio de acceso a las bases de datos y actúa como intermediario entre estas y los usuarios o aplicaciones."
+  },
+  {
+    "pregunta": "¿Qué arquitectura propuso ANSI en 1978?",
+    "respuesta": "- Nivel externo: cómo los usuarios ven los datos.<br/>- Nivel conceptual (lógico): visión global y abstracta de la BD.<br/>- Nivel interno (físico): cómo están almacenados realmente los datos."
+  },
+  {
+    "pregunta": "¿Qué es la independencia de datos?",
+    "respuesta": "- Lógica: Cambios en el esquema conceptual no afectan vistas externas.<br/>- Física: Cambios en el esquema interno no afectan niveles superiores."
+  },
+  {
+    "pregunta": "¿Qué tipos de SGBD existen según el modelo de datos?",
+    "respuesta": "1. Jerárquico<br/>2. En red<br/>3. Relacional<br/>4. Orientado a objetos<br/>5. Multidimensional<br/>6. No relacionales (NoSQL)"
+  },
+  {
+    "pregunta": "¿Qué otras clasificaciones existen para los SGBD?",
+    "respuesta": "Según cantidad de usuarios: monousuario vs multiusuario.<br/>Según distribución: centralizados, distribuidos homogéneos o federados."
+  },
+  {
+    "pregunta": "¿Qué es un SGBDR?",
+    "respuesta": "Es un sistema basado en el modelo relacional que garantiza integridad, eficiencia, disponibilidad y facilidad de manipulación de datos."
+  },
+  {
+    "pregunta": "¿Qué es la “Regla 0” de Codd?",
+    "respuesta": "Un sistema que se denomine relacional debe manejar bases de datos solo con sus capacidades relacionales."
+  },
+  {
+    "pregunta": "¿Cuáles son algunas de las 12 reglas de Codd?",
+    "respuesta": "1. Toda la información en tablas.<br/>2. Acceso por nombre de tabla, columna y clave.<br/>3. Valores nulos sistemáticos.<br/>4. Catálogo accesible como datos.<br/>5. Sublenguaje completo (DDL, DML, DCL, TCL).<br/>6. Vistas actualizables.<br/>7. Operaciones de inserción, actualización y borrado.<br/>8. Independencia física y lógica.<br/>9. Restricciones definibles.<br/>10. Soporte de distribución.<br/>11. No evasión mediante lenguajes bajos."
+  },
+  {
+    "pregunta": "¿Qué tipos de integridad deben respetarse en una BD relacional?",
+    "respuesta": "1. Integridad de entidad (clave primaria única y no nula).<br/>2. Integridad de dominio (atributos válidos).<br/>3. Integridad referencial (clave foránea coincide con primaria o es nula)."
+  },
+  {
+    "pregunta": "¿Qué hacer ante eliminación o modificación de una tupla referenciada?",
+    "respuesta": "- Restringir la acción.<br/>- Propagar cambios.<br/>- Anular la referencia."
+  },
+  {
+    "pregunta": "¿Qué es el diccionario de datos en un SGBDR?",
+    "respuesta": "Repositorio con metadatos que describe contenido y estructura de la base de datos: tablas, columnas, claves, índices, vistas, procedimientos, usuarios, accesos, etc."
+  },
+  {
+    "pregunta": "¿Qué ventajas ofrece el diccionario de datos?",
+    "respuesta": "Control centralizado, menor redundancia, mejor comunicación, evaluación de impactos, trazabilidad y auditoría."
+  },
+  {
+    "pregunta": "¿Qué lenguajes proporciona un SGBDR?",
+    "respuesta": "1. DDL (Data Definition Language): crear/modificar estructuras.<br/>2. DML (Data Manipulation Language): consultar, insertar, actualizar, eliminar.<br/>3. DCL (Data Control Language): gestionar permisos.<br/>4. TCL (Transaction Control Language): commit, rollback, savepoint."
+  },
+  {
+    "pregunta": "¿Qué herramientas incluye un SGBDR?",
+    "respuesta": "1. Motor de BD (acceso físico a datos).<br/>2. Herramientas de desarrollo (QBE, informes, interfaces gráficas, lenguaje natural).<br/>3. Herramientas de acceso al esquema (GUI para diccionario)."
+  },
+  {
+    "pregunta": "¿Qué tipos de arquitectura existen en SGBD?",
+    "respuesta": "- Centralizada<br/>- Cliente-servidor (dos o tres capas)"
+  },
+  {
+    "pregunta": "¿Qué se espera de un buen SGBD?",
+    "respuesta": "Calidad, eficiencia, escalabilidad, fiabilidad, documentación, soporte, interfaces gráficas, seguridad (confidencialidad, integridad, control de accesos, manejo de transacciones, resistencia a fallos, backup y continuidad)."
+  },
+  {
+    "pregunta": "¿Cuáles son las etapas de diseño de bases de datos en proyectos de software?",
+    "respuesta": "1. Definir requerimientos del sistema.<br/>2. Reconocer procesos afectados.<br/>3. Construir modelo conceptual.<br/>4. Preparar esquema lógico y físico.<br/>5. Diseñar interfaz y aplicaciones."
+  },
+  {
+    "pregunta": "¿Qué roles participan en un proyecto de bases de datos?",
+    "respuesta": "- DBA: administra estructura, motor, políticas, respaldos y ajustes.<br/>- Diseñador de BD: define estructuras y datos.<br/>- Analista de Sistemas: recoge requerimientos y diseña casos de uso.<br/>- Programadores: internos (triggers, SPs) y externos (SQL embebido)."
+  }
+]

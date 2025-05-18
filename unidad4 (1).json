@@ -1,0 +1,14 @@
+[
+    {
+        "pregunta": "¿Qué es el lenguaje SQL y qué funciones cumple en los sistemas de gestión de bases de datos relacionales (SGBDR)?",
+        "respuesta": "El SQL (Structured Query Language) es un lenguaje declarativo diseñado para gestionar y manipular bases de datos relacionales. Surgió como evolución del SEQUEL, creado en 1974, y fue estandarizado por ANSI en 1986. SQL permite especificar operaciones sobre los datos sin necesidad de detallar los pasos de ejecución, lo que lo hace amigable tanto para usuarios como para desarrolladores. Sus funciones incluyen: realizar consultas, insertar, actualizar y eliminar datos mediante DML, definir estructuras mediante DDL, controlar accesos mediante DCL, y gestionar transacciones mediante TCL. SQL se puede combinar con lenguajes procedurales y orientados a objetos como Java o Python, lo que lo convierte en una herramienta poderosa y flexible."
+    },
+    {
+        "pregunta": "¿Qué es el Lenguaje de Definición de Datos (DDL) y qué operaciones básicas permite realizar?",
+        "respuesta": "El Lenguaje de Definición de Datos (DDL) es una parte del lenguaje SQL que permite definir y modificar la estructura de los objetos de una base de datos. Entre sus operaciones básicas se encuentran: CREATE para crear bases de datos, tablas, dominios, vistas y aserciones; ALTER para modificar la estructura de tablas y dominios; DROP para eliminar objetos existentes; y TRUNCATE, que elimina todos los registros de una tabla. Estas operaciones afectan el diccionario de datos del sistema y suelen estar reservadas al administrador de base de datos (DBA)."
+    },
+    {
+        "pregunta": "¿Qué es el diccionario de datos y cuál es su función dentro de una base de datos?",
+        "respuesta": "El diccionario de datos es una base interna del sistema que almacena información sobre las estructuras definidas en la base de datos, como tablas, vistas, dominios, usuarios, derechos de acceso, y otros elementos. Se accede generalmente a través de vistas estandarizadas como INFORMATION_SCHEMA. El diccionario no se modifica directamente, sino que se actualiza automáticamente a través de comandos DDL. Su propósito es proporcionar una visión centralizada y coherente de la estructura de la base de datos."
+    }
+]

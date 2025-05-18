@@ -1,0 +1,90 @@
+[
+  {
+    "pregunta": "¿Qué es un modelo de datos?",
+    "respuesta": "Es un sistema formal y abstracto que permite describir los datos según reglas y convenciones predefinidas."
+  },
+  {
+    "pregunta": "¿Cuáles son los tres componentes de un modelo de datos?",
+    "respuesta": "1. Colección de estructuras de datos.<br/>2. Operadores o reglas de inferencia.<br/>3. Reglas generales de integridad."
+  },
+  {
+    "pregunta": "¿Qué tipos de modelos de datos existen?",
+    "respuesta": "1. Modelos conceptuales o de alto nivel: cercanos a la forma en que los usuarios perciben los datos.<br/>- Basados en objetos: Modelo de Dominio, Modelo Entidad-Relación.<br/>- Basados en registros: Modelo Jerárquico, Modelo de Redes, Modelo Relacional.<br/>2. Modelos físicos o de bajo nivel: describen cómo se almacenan físicamente los datos."
+  },
+  {
+    "pregunta": "¿Quién creó el Modelo E-R y cuándo?",
+    "respuesta": "Peter Chen, en 1976."
+  },
+  {
+    "pregunta": "¿Qué componentes principales tiene el Modelo E-R?",
+    "respuesta": "Entidades, Atributos, Relaciones o vínculos."
+  },
+  {
+    "pregunta": "¿Qué es una entidad?",
+    "respuesta": "Es un objeto distinguible que existe en el dominio del problema. Se representa con un rectángulo."
+  },
+  {
+    "pregunta": "¿Qué tipos de atributos existen?",
+    "respuesta": "Simples (atómicos), Compuestos, Monovalorados, Multivaluados, Derivados."
+  },
+  {
+    "pregunta": "¿Qué es una clave o identificador?",
+    "respuesta": "Es un atributo o conjunto de atributos que identifica de manera única a una entidad."
+  },
+  {
+    "pregunta": "¿Qué es una relación o vínculo?",
+    "respuesta": "Es una asociación entre dos o más entidades. Se representa con un rombo."
+  },
+  {
+    "pregunta": "¿Qué tipos de vínculos existen según su grado?",
+    "respuesta": "Binarios (dos entidades), Ternarios (tres entidades), De grado n (n entidades)."
+  },
+  {
+    "pregunta": "¿Qué son las cardinalidades?",
+    "respuesta": "Indican el número de instancias de una entidad que pueden asociarse con otra. Ej: 1:1, 1:N, N:M."
+  },
+  {
+    "pregunta": "¿Qué son los vínculos recursivos?",
+    "respuesta": "Relaciones donde una entidad se relaciona consigo misma."
+  },
+  {
+    "pregunta": "¿Qué es una entidad fuerte?",
+    "respuesta": "Aquella que tiene una clave propia para identificarse."
+  },
+  {
+    "pregunta": "¿Qué es una entidad débil?",
+    "respuesta": "Depende de una entidad fuerte para identificarse. No tiene clave propia."
+  },
+  {
+    "pregunta": "¿Qué es una relación identificadora?",
+    "respuesta": "Es la relación que vincula a la entidad débil con su entidad fuerte."
+  },
+  {
+    "pregunta": "¿Qué es una generalización?",
+    "respuesta": "Proceso para agrupar entidades similares en una superclase."
+  },
+  {
+    "pregunta": "¿Qué es una especialización?",
+    "respuesta": "Proceso para definir subclases más específicas a partir de una superclase."
+  },
+  {
+    "pregunta": "¿Qué es una jerarquía?",
+    "respuesta": "Organización de superclases y subclases en niveles."
+  },
+  {
+    "pregunta": "¿Qué es una retícula?",
+    "respuesta": "Red compleja de especializaciones que pueden compartir subclases."
+  },
+  {
+    "pregunta": "¿Qué es una categoría (unión)?",
+    "respuesta": "Entidad que representa una generalización de varias entidades que no tienen una superclase común."
+  },
+  {
+    "pregunta": "¿Qué es una agregación?",
+    "respuesta": "Es una abstracción donde una relación se trata como una entidad para poder relacionarla con otras entidades."
+  },
+  {
+    "pregunta": "¿Cómo se representa cada elemento en la notación básica del Modelo E-R?",
+    "respuesta": "Entidad: Rectángulo<br/>Relación: Rombo<br/>Atributo: Elipse<br/>Atributo clave: Subrayado<br/>Atributo compuesto: Elipse conectada a otras elipses<br/>Atributo multivaluado: Elipse doble<br/>Entidad débil: Rectángulo doble<br/>Relación identificadora: Rombo doble<br/>Generalización/especialización: Triángulo con jerarquía<br/>Agregación: Caja con rombo interno"
+  }
+]

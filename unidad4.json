@@ -1,0 +1,46 @@
+[
+  {
+    "pregunta": "¿Qué es el Lenguaje de Definición de Datos (DDL) y cuál es su función en un SGBD relacional?",
+    "respuesta": "El Lenguaje de Definición de Datos (DDL, por sus siglas en inglés: Data Definition Language) es una parte del lenguaje SQL que permite definir y modificar la estructura de los objetos dentro de una base de datos. Es utilizado para crear, alterar y eliminar objetos como bases de datos, tablas, vistas, dominios y aserciones. Estos cambios afectan directamente al diccionario de datos del sistema, el cual contiene la descripción de la estructura de todos los objetos. Solo los usuarios con permisos especiales (como el DBA) pueden usar comandos DDL. Las operaciones básicas del DDL son: CREATE (crear), ALTER (modificar), DROP (eliminar) y TRUNCATE (vaciar el contenido de una tabla sin borrar su estructura)."
+  },
+  {
+    "pregunta": "¿Qué es el diccionario de datos y qué tipo de información contiene?",
+    "respuesta": "El diccionario de datos, también conocido como catálogo, es una base de datos del sistema que almacena información sobre la estructura de otras bases de datos. Contiene metadatos, como definiciones de tablas, vistas, columnas, tipos de datos, claves, restricciones, usuarios, permisos y relaciones entre objetos. En SQL, especialmente bajo el estándar ANSI, se accede al diccionario de datos mediante las vistas llamadas INFORMATION_SCHEMA. Estas vistas permiten a los usuarios consultar la estructura de las bases de datos sin necesidad de permisos para modificarla."
+  },
+  {
+    "pregunta": "¿Cómo se crea y elimina una base de datos en SQL?",
+    "respuesta": "Para crear una base de datos se utiliza la sentencia CREATE DATABASE o CREATE SCHEMA. Por ejemplo: CREATE DATABASE ropa_siempre_limpia. Esta operación permite definir opciones como el conjunto de caracteres (CHARACTER SET), colación (COLLATE) y cifrado (ENCRYPTION). Para eliminar una base de datos, se emplea DROP DATABASE seguido del nombre de la base, como en: DROP DATABASE ropa_siempre_limpia. Se puede usar la opción IF EXISTS para evitar errores si la base no existe."
+  },
+  {
+    "pregunta": "¿Cómo se define una tabla en SQL y qué elementos la componen?",
+    "respuesta": "Una tabla se define con la sentencia CREATE TABLE. Esta incluye el nombre de la tabla, una lista de columnas, sus tipos de datos, restricciones de columna y posibles restricciones de tabla. Por ejemplo:\nCREATE TABLE clientes (\n  tipo_doc VARCHAR(4) NOT NULL,\n  nro_doc INT NOT NULL,\n  nom_ape VARCHAR(50) NOT NULL,\n  tel VARCHAR(20) DEFAULT NULL,\n  dir VARCHAR(50) DEFAULT NULL\n);\nLas columnas pueden tener tipos de datos simples o dominios definidos por el usuario, valores por defecto (DEFAULT), y restricciones como NOT NULL, UNIQUE, PRIMARY KEY, CHECK o FOREIGN KEY."
+  },
+  {
+    "pregunta": "¿Cuáles son los tipos de datos más comunes en SQL y qué características tienen?",
+    "respuesta": "Los tipos de datos en SQL incluyen:\n1. **Cadenas de caracteres**: VARCHAR(n), CHAR(n)\n2. **Numéricos enteros**: TINYINT, SMALLINT, MEDIUMINT, INT/INTEGER, BIGINT. Pueden definirse con o sin signo (UNSIGNED) y con ceros a la izquierda (ZEROFILL).\n3. **Numéricos decimales y flotantes**: FLOAT(M,D), DOUBLE, DECIMAL(M,D). Permiten definir precisión (M) y escala (D).\n4. **Fechas y tiempos**: DATE (aaaa-mm-dd), DATETIME (aaaa-mm-dd hh:mm:ss), TIMESTAMP, TIME, YEAR. Se utilizan para almacenar y comparar valores temporales con formatos definidos."
+  },
+  {
+    "pregunta": "¿Qué son los dominios en SQL y cómo se crean, modifican y eliminan?",
+    "respuesta": "Los dominios en SQL son tipos de datos definidos por el usuario que incluyen restricciones adicionales. Se crean con CREATE DOMAIN, permitiendo asignar un tipo de datos base y restricciones. Ejemplo:\nCREATE DOMAIN dom_ciudades AS VARCHAR(20) CONSTRAINT ciudades_validas CHECK (VALUE IN ('Rosario', 'Perez', 'Galvez', 'Funes'));\nLos dominios se modifican con ALTER DOMAIN y pueden eliminarse con DROP DOMAIN, usando las opciones RESTRICT o CASCADE dependiendo de si están en uso. Esto facilita la estandarización de valores en distintas tablas."
+  },
+  {
+    "pregunta": "¿Qué son las restricciones de columna y de tabla, y cómo se definen?",
+    "respuesta": "Las restricciones aseguran la integridad de los datos. Las restricciones de columna se definen junto al tipo de dato de la columna y aplican a valores individuales. Incluyen: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK. Las restricciones de tabla se definen fuera de las columnas y pueden aplicarse a múltiples columnas. Ejemplo:\nPRIMARY KEY (col1, col2),\nFOREIGN KEY (col1) REFERENCES otra_tabla(col2)\nCHECK (condición).\nAlgunas restricciones (como claves primarias compuestas) deben definirse a nivel de tabla."
+  },
+  {
+    "pregunta": "¿Cómo se modifican y eliminan columnas y restricciones en una tabla?",
+    "respuesta": "Para modificar tablas se usa ALTER TABLE. Esto permite:\n- Agregar columnas: ALTER TABLE empleados ADD COLUMN ciudad VARCHAR(30);\n- Eliminar columnas: ALTER TABLE empleados DROP COLUMN ciudad;\n- Modificar restricciones: ALTER TABLE empleados ADD CONSTRAINT fk_ciudad FOREIGN KEY (ciudad) REFERENCES ciudades(nombre);\n- Eliminar restricciones: ALTER TABLE empleados DROP CONSTRAINT fk_ciudad;\nLas restricciones pueden eliminarse con RESTRICT (si no hay referencias) o CASCADE (si se borran referencias relacionadas)."
+  },
+  {
+    "pregunta": "¿Qué son las aserciones en SQL y cómo se utilizan?",
+    "respuesta": "Una aserción es una restricción que aplica a múltiples tablas o columnas en una base de datos. Se define con CREATE ASSERTION y permite establecer condiciones generales. Ejemplo:\nCREATE ASSERTION restriccion1 CHECK (NOT EXISTS (\n  SELECT * FROM empleados e, procesos_realizados p\n  WHERE e.cuil = p.cuil_empleado AND e.sueldo < 2000 AND p.cod_proceso = 11\n));\nLas aserciones garantizan reglas de negocio complejas. Pueden eliminarse con DROP ASSERTION. Sin embargo, no todos los SGBD las soportan (MySQL 5.1, por ejemplo, no las implementa)."
+  },
+  {
+    "pregunta": "¿Qué es una vista en SQL y cuál es su utilidad?",
+    "respuesta": "Una vista es una tabla virtual derivada de una consulta. No almacena datos físicamente, sino que representa una consulta sobre una o más tablas reales. Se crea con CREATE VIEW y puede simplificar consultas complejas, proporcionar seguridad y ocultar detalles innecesarios. Ejemplo:\nCREATE VIEW procesos_empleados AS (\n  SELECT nom_ape, desc_proceso\n  FROM empleados e\n  JOIN procesos_realizados pr ON e.cuil = pr.cuil_empleado\n  JOIN procesos p ON pr.cod_proceso = p.cod_proceso\n);\nLas vistas pueden ser simples (una tabla, sin funciones de grupo) o compuestas. Se eliminan con DROP VIEW."
+  },
+  {
+    "pregunta": "¿Cuál es la diferencia entre DELETE y TRUNCATE en el borrado de contenido de una tabla?",
+    "respuesta": "Ambos comandos se utilizan para borrar datos, pero tienen diferencias importantes. DELETE es parte del DML y permite eliminar filas específicas según una condición. Es una operación registrada y reversible mediante transacciones. TRUNCATE es parte del DDL, borra todos los registros de una tabla de forma rápida y no registra la operación, por lo que no puede deshacerse. Además, TRUNCATE no activa triggers y no se puede usar con tablas referenciadas por claves foráneas si el motor lo impide."
+  }
+]

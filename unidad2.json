@@ -1,0 +1,138 @@
+[
+  {
+    "pregunta": "¿Qué es el modelo relacional?",
+    "respuesta": "Es un modelo basado en la lógica de predicados y en la teoría de conjuntos. Fue propuesto por Edgar F. Codd."
+  },
+  {
+    "pregunta": "¿Cuáles son los componentes del modelo relacional?",
+    "respuesta": "Estructura de Datos: relaciones o tablas, compuestas por tuplas (filas) y atributos (columnas).<br/><br/>Reglas de Integridad: restricciones que aseguran la validez de los datos.<br/><br/>Operadores: herramientas para manipular datos (Álgebra Relacional)."
+  },
+  {
+    "pregunta": "¿Qué es el “grado” de una relación?",
+    "respuesta": "Es la cantidad de atributos que contiene una tabla o relación."
+  },
+  {
+    "pregunta": "¿Qué es la integridad de entidad?",
+    "respuesta": "Requiere la definición de una clave primaria:<br/><br/>Identifica unívocamente a cada fila.<br/>No puede admitir valores nulos.<br/>Debe ser mínima (sin atributos superfluos)."
+  },
+  {
+    "pregunta": "¿Qué es la integridad referencial?",
+    "respuesta": "Implica el uso de claves foráneas que deben coincidir con claves primarias de otra tabla o ser nulas.<br/><br/>Garantiza la relación entre tabla hija y tabla padre."
+  },
+  {
+    "pregunta": "¿Qué es la integridad de dominio?",
+    "respuesta": "Especifica los valores válidos para cada atributo (semánticamente y luego como tipo de dato)."
+  },
+  {
+    "pregunta": "¿Qué es una dependencia funcional (DF)?",
+    "respuesta": "Se dice que X → Y si para cada valor de X hay un único valor de Y."
+  },
+  {
+    "pregunta": "¿Qué es un esquema de relación?",
+    "respuesta": "Se representa como: r = R(T, DF)<br/><br/>R: nombre de la relación<br/>T: atributos<br/>DF: conjunto de dependencias funcionales"
+  },
+  {
+    "pregunta": "¿Qué es la clausura de un conjunto de atributos?",
+    "respuesta": "Es el conjunto de atributos que pueden derivarse de otro mediante DF."
+  },
+  {
+    "pregunta": "¿Qué son las dependencias parciales?",
+    "respuesta": "Cuando un atributo depende solo de parte de una clave compuesta."
+  },
+  {
+    "pregunta": "¿Qué es una dependencia transitiva?",
+    "respuesta": "Cuando A → B y B → C, entonces A → C."
+  },
+  {
+    "pregunta": "¿Qué es una clave candidata?",
+    "respuesta": "Es un conjunto mínimo de atributos cuya clausura determina todos los atributos de la tabla."
+  },
+  {
+    "pregunta": "¿Qué es una clave primaria?",
+    "respuesta": "Es la clave candidata elegida para identificar unívocamente las filas."
+  },
+  {
+    "pregunta": "¿Qué es un atributo superfluo?",
+    "respuesta": "Aquel que no agrega información a la clave (debe eliminarse para cumplir la minimalidad)."
+  },
+  {
+    "pregunta": "¿Qué son los Axiomas de Armstrong?",
+    "respuesta": "Reglas utilizadas para inferir nuevas dependencias funcionales a partir de un conjunto dado.<br/><br/>Reflexividad: si Y ⊆ X entonces X → Y<br/>Aumentatividad: si X → Y entonces XZ → YZ<br/>Transitividad: si X → Y y Y → Z entonces X → Z<br/>Proyectividad (Descomposición): de X → YZ, se deduce X → Y y X → Z<br/>Aditividad (Unión): si X → Y y X → Z entonces X → YZ<br/>Pseudo-transitividad: si X → Y y WY → Z entonces WX → Z"
+  },
+  {
+    "pregunta": "¿Qué es la normalización?",
+    "respuesta": "Es el proceso de dividir relaciones para evitar redundancias y asegurar integridad."
+  },
+  {
+    "pregunta": "¿Cuándo es necesaria la normalización?",
+    "respuesta": "Cuando no se encuentra una única clave o se producen anomalías de inserción, eliminación o actualización."
+  },
+  {
+    "pregunta": "¿Qué se busca con la normalización?",
+    "respuesta": "Evitar duplicaciones innecesarias<br/>Facilitar el mantenimiento<br/>Garantizar coherencia"
+  },
+  {
+    "pregunta": "¿Qué pasos se siguen para transformar un modelo E-R a relacional?",
+    "respuesta": "Entidades fuertes → tablas.<br/>Atributos simples → columnas.<br/>Claves primarias → se identifican.<br/>Relaciones (1:1, 1:N, N:M) → se modelan con claves foráneas o nuevas tablas.<br/>Entidades débiles → tabla con clave compuesta.<br/>Generalización/especialización → diferentes enfoques (tabla por jerarquía, por subclase, etc.)."
+  },
+  {
+    "pregunta": "¿Qué tipos de operaciones existen en álgebra relacional?",
+    "respuesta": "Fundamentales: Selección, Proyección, Unión, Diferencia, Producto Cartesiano, Join.<br/>Derivadas: Intersección, División, Natural Join, Theta Join."
+  },
+  {
+    "pregunta": "¿Qué diferencia hay entre operaciones unitarias y binarias?",
+    "respuesta": "Unitarias: actúan sobre una sola relación (selección, proyección).<br/>Binarias: requieren dos relaciones (unión, diferencia, join, etc.)."
+  },
+  {
+    "pregunta": "¿Qué hace la operación SELECCIÓN (σ)?",
+    "respuesta": "Filtra filas que cumplen una condición.<br/>Ej: σ (Legajo < 37000) (ALUMNOS)"
+  },
+  {
+    "pregunta": "¿Qué hace la operación PROYECCIÓN (π)?",
+    "respuesta": "Selecciona columnas específicas y elimina duplicados.<br/>Ej: π apellido, teléfono (PROFESORES)"
+  },
+  {
+    "pregunta": "¿Qué hace el PRODUCTO CARTESIANO (×)?",
+    "respuesta": "Combina todas las tuplas de dos relaciones."
+  },
+  {
+    "pregunta": "¿Qué hace la UNIÓN (∪)?",
+    "respuesta": "Une dos relaciones unión-compatibles (mismo grado y dominios)."
+  },
+  {
+    "pregunta": "¿Qué hace la DIFERENCIA (-)?",
+    "respuesta": "Muestra tuplas de la primera relación que no están en la segunda."
+  },
+  {
+    "pregunta": "¿Qué es la INTERSECCIÓN (∩)?",
+    "respuesta": "Muestra tuplas que están en ambas relaciones.<br/>Es derivada: R1 ∩ R2 = R1 - (R1 - R2)"
+  },
+  {
+    "pregunta": "¿Qué es el JOIN NATURAL?",
+    "respuesta": "Combina tablas por atributos comunes, elimina duplicados."
+  },
+  {
+    "pregunta": "¿Qué es el THETA JOIN (θ-Join)?",
+    "respuesta": "Combina tablas con una condición explícita entre columnas."
+  },
+  {
+    "pregunta": "¿Qué es la DIVISIÓN (÷)?",
+    "respuesta": "Devuelve los valores de una relación que están relacionados con todas las tuplas de otra.<br/>Ej: alumnos inscriptos en todas las carreras de otro alumno."
+  },
+  {
+    "pregunta": "¿Qué es RENOMBRAR?",
+    "respuesta": "Permite cambiar el nombre de la tabla o de atributos:<br/>R1 (a1, a2) ← π (R) atributo1, atributo2"
+  },
+  {
+    "pregunta": "¿Qué es la INSERCIÓN?",
+    "respuesta": "R1 ← R1 ∪ R2"
+  },
+  {
+    "pregunta": "¿Qué es la ELIMINACIÓN?",
+    "respuesta": "R1 ← R1 - R2"
+  },
+  {
+    "pregunta": "¿Qué es la ACTUALIZACIÓN?",
+    "respuesta": "A ← δ atributo = cálculo (A)"
+  }
+]
