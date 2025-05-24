@@ -1,0 +1,56 @@
+
+
+[
+  {
+    "pregunta": "¿Qué se entiende por seguridad de la información en el contexto de las bases de datos relacionales y qué leyes y normativas internacionales la regulan?",
+    "respuesta": "La seguridad de la información en bases de datos relacionales abarca aspectos técnicos, legales y éticos, incluyendo el control de acceso a datos tanto digitales como físicos. Implica el uso de controles de red, hardware, sistema operativo, físicos y políticas organizacionales. En Argentina rige la Ley 25.326 de Protección de Datos Personales, y en Europa el GDPR. Las empresas deben implementar Sistemas de Gestión de Seguridad de la Información (SGSI), como la norma ISO/IEC 27001:2022, para cumplir con estas leyes."
+  },
+  {
+    "pregunta": "¿Qué es la norma ISO/IEC 27001:2022 y cuáles son sus principios fundamentales respecto a la seguridad de la información?",
+    "respuesta": "La ISO/IEC 27001:2022 es una norma internacional que define los requisitos para establecer, implementar, mantener y mejorar un sistema de gestión de seguridad de la información. Su implementación es estratégica y considera factores como los objetivos organizacionales, tamaño y estructura. Sus principios clave son la confidencialidad (solo los autorizados acceden a la información), integridad (información precisa y completa) y disponibilidad (acceso a la información cuando se necesita)."
+  },
+  {
+    "pregunta": "¿Qué es una transacción en bases de datos, cuáles son sus propiedades fundamentales y quiénes son responsables de garantizar cada una?",
+    "respuesta": "Una transacción es un conjunto de operaciones que deben ejecutarse como una unidad lógica. Sus propiedades ACID son: Atomicidad (completa o nada, gestionada por el componente de transacciones), Consistencia (estado coherente antes y después, responsabilidad del programador), Aislamiento (concurrencia segura, gestionado por el componente de control de concurrencias) y Durabilidad (persistencia post-falla, asegurada por el componente de recuperación del SGBD)."
+  },
+  {
+    "pregunta": "¿Cuáles son los estados posibles de una transacción y cómo afectan a la consistencia de la base de datos?",
+    "respuesta": "Una transacción puede estar en los estados: Activa, Parcialmente comprometida, Fallida, Abortada o Comprometida. Durante su ejecución la base está en un estado inconsistente. Una transacción comprometida transforma el estado a consistente, mientras que una abortada no debe dejar efectos, debiendo revertirse todos sus cambios."
+  },
+  {
+    "pregunta": "¿Qué papel cumple el log de transacciones y cuáles son sus componentes esenciales?",
+    "respuesta": "El log de transacciones registra todas las operaciones ejecutadas sobre la base de datos. Incluye marcas de inicio y fin de transacción, y cambios con valores antes y después. Permite al SGBD recuperar el estado consistente tras fallas mediante técnicas de deshacer (rollback) o rehacer (redo), garantizando la transparencia de recuperación y concurrencia."
+  },
+  {
+    "pregunta": "¿Qué problemas pueden surgir de la ejecución concurrente de transacciones y cómo se previenen?",
+    "respuesta": "Los principales problemas son: actualización perdida, lectura sucia, lectura no repetible y lectura fantasma. Se previenen mediante niveles de aislamiento, bloqueos y protocolos de compromiso en dos fases. Un mayor aislamiento reduce inconsistencias pero también la concurrencia. El control de concurrencia asegura que el resultado concurrente sea equivalente al secuencial."
+  },
+  {
+    "pregunta": "¿Qué tipos de bloqueos existen y cómo afecta la granularidad al control de concurrencia?",
+    "respuesta": "Existen bloqueos compartidos (para lectura) y exclusivos (para escritura). La granularidad se refiere al tamaño del objeto bloqueado: a mayor granularidad (bloqueos más pequeños), mayor concurrencia. Se puede bloquear desde campos individuales hasta la base entera, según la operación. Esto permite un balance entre seguridad y rendimiento."
+  },
+  {
+    "pregunta": "¿En qué consiste el protocolo de compromiso en dos fases y qué ventajas y desventajas presenta?",
+    "respuesta": "Este protocolo implica adquirir todos los bloqueos necesarios antes de ejecutar y liberar todos los bloqueos al final. Asegura la integridad evitando actualizaciones perdidas, pero puede generar esperas prolongadas. Por eso, algunos SGBD permiten liberar bloqueos compartidos antes del fin. El nivel de aislamiento determinará cuánto se permite interferir entre transacciones."
+  },
+  {
+    "pregunta": "¿Qué niveles de aislamiento existen y qué problemas de concurrencia evita cada uno?",
+    "respuesta": "Los niveles son: Serializable (evita todos los problemas, máximo aislamiento), Lectura repetible (evita lecturas no repetibles, pero no fantasmas), Lectura comprometida (evita lecturas sucias), y Lectura no comprometida (no evita problemas, solo útil para lecturas). El diseñador debe elegir según el equilibrio entre consistencia y concurrencia."
+  },
+  {
+    "pregunta": "¿Cómo se clasifican los fallos en bases de datos y qué métodos existen para recuperarse de ellos?",
+    "respuesta": "Los fallos pueden ser: caídas del sistema, errores lógicos (problemas de integridad o programación) y fallas anormales (comunicación, deadlocks). Se utilizan mecanismos como logs de transacciones, backups, puntos de control, RAID y UPS. Según el tipo de actualización (diferida o inmediata), la recuperación varía entre deshacer o rehacer transacciones para preservar la integridad."
+  },
+  {
+    "pregunta": "¿Qué mecanismos ofrecen los SGBD para garantizar la confidencialidad y el control de accesos?",
+    "respuesta": "Ofrecen mecanismos discrecionales (asignación de privilegios a usuarios, roles o grupos) y obligatorios (niveles de seguridad). El control de accesos incluye cuentas, contraseñas y definición de políticas por parte del DBA. Se registra toda la actividad del usuario (login, actualizaciones, logout) en un log de accesos para auditoría."
+  },
+  {
+    "pregunta": "¿Cómo se asignan los privilegios de acceso en diferentes niveles dentro de una base de datos relacional?",
+    "respuesta": "A nivel de cuenta se otorgan privilegios como CREATE, ALTER, DROP. A nivel de relación, se controla el acceso a vistas o tablas mediante privilegios como SELECT, MODIFY (INSERT, UPDATE, DELETE) y REFERENCES. Cada relación tiene un propietario con todos los privilegios, quien puede conceder o revocar permisos a otros usuarios."
+  },
+  {
+    "pregunta": "¿Qué problemas de seguridad pueden surgir relacionados al acceso a bases de datos y cómo mitigarlos?",
+    "respuesta": "Incluyen: almacenamiento inseguro de cadenas de conexión, uso de identidades inapropiadas, tráfico no cifrado, autenticación deficiente y autorización inadecuada. Se recomienda cifrar las conexiones, autenticar con NTLM o Kerberos, y usar permisos asignados a perfiles o grupos, no a usuarios individuales."
+  }
+]
